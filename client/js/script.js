@@ -14,13 +14,11 @@ $(document).ready(function () {
     if (keys.indexOf(e.keyCode) === -1) {
       keys.push(e.keyCode);
     }
-    e.preventDefault();
   });
 
   $(document).keyup(function(e) {
     if (keys.indexOf(e.keyCode) !== -1) {
       keys.splice(keys.indexOf(e.keyCode), 1);
     }
-    e.preventDefault();
   });
 });
