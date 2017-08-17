@@ -12,7 +12,14 @@
 </head>
 
 <body>
-  <img src="http://raspberrypi:8080/?action=stream" />
+  <form id="settings">
+    <input type="text" id="control_url" placeholder="ws://..." />
+    <input type="text" id="stream_url" placeholder="http://..." />
+    <button id="connect">Connect</button>
+  </form>
+  <div id="stream">
+
+  </div>
   <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="js/script.js"></script>
 </body>

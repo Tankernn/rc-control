@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  var socket = new WebSocket("ws://raspberrypi:54321");
+function connect(stream_url, control_url) {
+  var socket = new WebSocket(control_url);
   var keys = [];
 
   socket.onopen = function() {
@@ -20,5 +20,14 @@ $(document).ready(function () {
     if (keys.indexOf(e.keyCode) !== -1) {
       keys.splice(keys.indexOf(e.keyCode), 1);
     }
+  });
+
+  $("#stream").append('<img src="' + stream_url + '" width="1280" height="720" />');
+}
+
+$(document).ready(function () {
+  $("#connect").click(function () {
+    connect($("#stream_url").val(), $("#control_url").val());
+    $("#settings").remove();
   });
 });
